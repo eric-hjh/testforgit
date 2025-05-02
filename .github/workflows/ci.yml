@@ -3,7 +3,9 @@ name: build-and-test
 
 on:
   pull_request:
-    branches: [master, dev, main] # 또는 dev 등
+    branches:
+      - main
+      - dev
 
 jobs:
   build:
