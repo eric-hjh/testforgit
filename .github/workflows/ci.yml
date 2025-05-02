@@ -1,0 +1,21 @@
+# 📁 .github/workflows/ci.yml
+name: build-and-test
+
+on:
+  pull_request:
+    branches: [master, dev, main] # 또는 dev 등
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: npm run build
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: npm test
